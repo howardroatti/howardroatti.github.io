@@ -1,6 +1,6 @@
 <h1>Seja bem-vindo!</h1>
 
-<img src="https://github.com/howardroatti/howardroatti.github.io/blob/main/Howard.jpg"/>
+<img src="https://github.com/howardroatti/howardroatti.github.io/blob/main/Howard.jpg">
 
 <p>Olá, me chamo Howard Roatti...<br>
 Sou Professor de Ensino Superior na <b>FAESA centro Universitário</b><br>
