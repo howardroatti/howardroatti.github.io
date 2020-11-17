@@ -1,5 +1,7 @@
 <h1>Seja bem-vindo!</h1>
 
+<img src="./img/Howard.jpg">
+
 <p>Olá, me chamo Howard Roatti...<br>
 Sou Professor de Ensino Superior na <b>FAESA centro Universitário</b><br>
 Sou Cientista de Dados na <b>Autoglass</b></p>
