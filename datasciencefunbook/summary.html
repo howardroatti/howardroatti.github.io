@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>📚 Summary – Data Science Post Fun (Season 1)</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .book-title {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.2em;
+    }
+    .accordion {
+      background-color: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 10px 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      transition: 0.4s;
+      font-weight: bold;
+    }
+    .active, .accordion:hover {
+      background-color: #ccc;
+    }
+    .panel {
+      padding: 0 18px;
+      display: none;
+      background-color: #f9f9f9;
+      overflow: hidden;
+    }
+    ol {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="book-title">
+  📘 From Insight to Deploy: A Lighthearted Journey Through Deep Data Science
+</div>
+
+<h2 style="text-align:center;">Summary</h2>
+
+<button class="accordion">Season 1 – Foundations & Fun</button>
+<div class="panel">
+  <ol>
+    <li><a href="season1/chapter1.html" target="_parent">Chapter 1 – Data Science: The Art of Making Spreadsheets Look Magical</a></li>
+    <li><a href="season1/chapter2.html" target="_parent">Chapter 2 – "It Depends": The Most Honest Answer in Data Science</a></li>
+    <li><a href="season1/chapter3.html" target="_parent">Chapter 3 – From Gut Feelings to Confidence Intervals</a></li>
+    <li><a href="season1/chapter4.html" target="_parent">Chapter 4 – “It Works on My Machine”: The Data Scientist's Battle Cry</a></li>
+    <li><a href="season1/chapter5.html" target="_parent">Chapter 5 – Random Forests and Other Deceptively Named Creatures</a></li>
+    <li><a href="season1/chapter6.html" target="_parent">Chapter 6 – Why Did the Model Do That? (Explaining the Unexplainable)</a></li>
+    <li><a href="season1/chapter7.html" target="_parent">Chapter 7 – Data Doesn’t Speak. It Mumbles.</a></li>
+    <li><a href="season1/chapter8.html" target="_parent">Chapter 8 – The KPI That Cried Wolf</a></li>
+    <li><a href="season1/chapter9.html" target="_parent">Chapter 9 – Dashboard Drift and Other Nightmares</a></li>
+    <li><a href="season1/chapter10.html" target="_parent">Chapter 10 – The Meeting That Could Have Been an Email</a></li>
+    <li><a href="season1/chapter11.html" target="_parent">Chapter 11 – The Tale of the Phantom Metric</a></li>
+    <li><a href="season1/chapter12.html" target="_parent">Chapter 12 – The Pipeline Gods Must Be Angry</a></li>
+    <li><a href="season1/chapter13.html" target="_parent">Chapter 13 – When Everything Is a Priority</a></li>
+    <li><a href="season1/chapter14.html" target="_parent">Chapter 14 – A Brief History of Things We Forgot to Monitor</a></li>
+    <li><a href="season1/chapter15.html" target="_parent">Chapter 15 – Alerts at 3AM and Other Joys of Deployment</a></li>
+    <li><a href="season1/chapter16.html" target="_parent">Chapter 16 – The Jupyter Notebook from Hell</a></li>
+    <li><a href="season1/chapter17.html" target="_parent">Chapter 17 – When Your Dashboard Becomes a Crime Scene</a></li>
+    <li><a href="season1/chapter18.html" target="_parent">Chapter 18 – The Model Retrained Itself (Badly)</a></li>
+    <li><a href="season1/chapter19.html" target="_parent">Chapter 19 – The Experiment That Wouldn’t Die</a></li>
+    <li><a href="season1/chapter20.html" target="_parent">Chapter 20 – The Metric Was Right (But the World Changed)</a></li>
+  </ol>
+</div>
+
+<script>
+  const acc = document.getElementsByClassName("accordion");
+  for (let i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      const panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
