@@ -1,26 +1,92 @@
-<h1>Seja bem-vindo!</h1>
+---
+title: "Do Insight ao Deploy: Uma Jornada Leve por Temas Profundos"
+lang: pt-BR
+description: "Livro interativo sobre Data Science com humor, prática e profundidade"
+---
 
-<img src="./img/Howard.jpg">
+# 📘 Do Insight ao Deploy: Uma Jornada Leve por Temas Profundos  
+### *From Insight to Deploy: A Lighthearted Journey Through Deep Data Science*
 
-<p>Olá, me chamo Howard Roatti...<br>
-Sou Professor de Ensino Superior na <b>FAESA centro Universitário</b><br>
-Sou Cientista de Dados na <b>americanas s.a.</b></p>
-<p>Sou Mestre em Informática pela <b>UFES</b> com pesquisa focada em <i>Inteligência Artificial</i>, onde tive a oportunidade de me aproximar e me apaixonar pela área.</p>
-<p>Meu objetivo é disseminar o uso de <i>Machine Learning</i> no meio acadêmico através de pesquisas, projetos e extensão. E no meio corporativo através da aplicação em pesquisas e projetos da vida real de maneira a trazer vantagem competitiva para quem utiliza esse tipo de conhecimento.</p>
-<br/>
-<br/>
-<h3>Quer saber mais? Entre em contato comigo...</h3>
-<ul>
-  <li>
-    <a href="mailto:howardcruzroatti@gmail.com"> Contate-me </a>
-  </li>
-  <li>
-    <a href="https://github.com/howardroatti/"> Github </a>
-  </li>
-  <li>
-    <a href="https://www.linkedin.com/in/howardroatti/"> LinkedIn </a>
-  </li>
-  <li>
-    <a href="http://lattes.cnpq.br/7407114204217343"> Currículo Lattes </a>
-  </li>
-</ul>
+Bem-vindo(a) ao repositório oficial do **Data Science Post Fun — O Livro**!
+
+Este projeto apresenta uma coletânea de episódios leves, práticos e reflexivos sobre ciência de dados, organizados em temporadas temáticas. Cada capítulo transforma situações reais (e hilárias) em lições técnicas, com atividades hands-on, desafios e recomendações de ferramentas.
+
+📌 Os episódios estão organizados por temporada, como em uma série:
+
+- **Temporada 1:** Fundamentos e Diversão  
+- **Temporada 2:** Dados no Mundo Real  
+- **Temporada 3:** Quando Tudo Quebra (e Por Quê)  
+- *(e muito mais por vir!)*
+
+---
+
+### 📚 Acesse o Sumário
+
+🔗 [Ir para o Sumário do Livro](https://howardroatti.github.io/datasciencefunbook/summary.html)
+
+---
+
+Este livro é ideal para:
+
+- Estudantes e iniciantes em Data Science;
+- Profissionais que querem aprender com leveza e exemplos reais;
+- Curiosos sobre o cotidiano por trás dos modelos e dashboards.
+
+---
+
+### 💙 Apoie este projeto
+
+Se algum capítulo te ajudou, ensinou ou divertiu, considere apoiar:
+
+- [Via Mercado Pago](http://link.mercadopago.com.br/datasciencefunbook)
+- Via Pix (QR code no final de cada capítulo)
+
+---
+
+✍️ Por [Howard Roatti](https://www.linkedin.com/in/howardroatti)  
+📅 Novos episódios sendo publicados!
+
+<br>
+<br>
+
+## 🌍 English Version
+
+Welcome to the official repository of **Data Science Post Fun — The Book**!
+
+This project compiles fun, hands-on, and insightful data science episodes, organized into themed seasons. Each chapter turns real (and sometimes absurd) situations into technical lessons, exercises, and curated tools.
+
+📌 Episodes are organized like a series:
+
+- **Season 1:** Foundations & Fun  
+- **Season 2:** Data in the Wild  
+- **Season 3:** When Things Break (and Why)  
+- *(and more to come!)*
+
+---
+
+### 📚 Table of Contents
+
+🔗 [Go to the Book Summary](https://howardroatti.github.io/datasciencefunbook/summary.html)
+
+---
+
+This book is ideal for:
+
+- Students and data science newcomers;
+- Professionals looking to learn through real-world examples;
+- Anyone curious about what data scientists *actually* do.
+
+
+---
+
+### 💙 Support This Project
+
+If a chapter made you smile or helped you out, consider supporting:
+
+- [Via Mercado Pago (BRL)](http://link.mercadopago.com.br/datasciencefunbook)
+- Pix QR codes available at the end of each chapter
+
+---
+
+✍️ By [Howard Roatti](https://www.linkedin.com/in/howardroatti)  
+📅 New chapters released regularly!
