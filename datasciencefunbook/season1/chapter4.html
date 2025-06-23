@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Science: “It Works on My Machine”</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 280px;
+      height: 100vh;
+      border: none;
+      overflow-y: auto;
+      background-color: #f4f4f4;
+    }
+    .main-content {
+      flex: 1;
+      padding: 30px;
+      max-width: 800px;
+    }
+    .book-title {
+      background-color: #003366;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <iframe class="sidebar" src="../summary.html" title="Summary"></iframe>
+
+  <div class="main-content">
+    <div class="book-title">
+      📘 From Insight to Deploy: A Lighthearted Journey Through Deep Data Science
+    </div>
+
+    <header>
+      <h1>🖥️ Data Science: “It Works on My Machine”</h1>
+      <h2>Season 1 — Episode 4</h2>
+    </header>
+
+    <section>
+      <h3>🎙️ Original Episode</h3>
+      <p>Data science is a field where you can spend hours tuning a model, writing perfect code, and getting amazing results — only for everything to break on another computer.</p>
+      <ul>
+        <li>Model has 99% accuracy in training but fails in production.</li>
+        <li>Pipelines break mysteriously overnight.</li>
+        <li>"Simple" analyses take three days due to messy data.</li>
+        <li>Stack Overflow solutions are copy-pasted with hope.</li>
+      </ul>
+
+      <h4>Why We Stick With It</h4>
+      <ul>
+        <li>Scripts that run without errors feel like magic.</li>
+        <li>Clear data visualizations are oddly satisfying.</li>
+        <li>Correct model predictions = digital joy.</li>
+        <li>Automation = power.</li>
+      </ul>
+
+      <p>So if a data scientist says “It works on my machine,” give them a hug. They’re struggling.</p>
+    </section>
+
+    <section>
+      <h3>🔍 Let’s Go Deeper…</h3>
+      <p>This phrase usually means: environment mismatch, missing files, bad paths, or no version control. But we can fix that.</p>
+
+      <h4>🧱 Common Causes</h4>
+      <ul>
+        <li>Different library versions (e.g., pandas 1.4.2 vs 2.0.0)</li>
+        <li>Missing local files or hardcoded paths</li>
+        <li>No random seed set</li>
+        <li>Unserialized models or non-versioned data</li>
+      </ul>
+
+      <h4>💻 Hands-on – Making Your ML Workflow Reproducible</h4>
+      <pre><code>import pandas as pd
+import numpy as np
+from sklearn.ensemble import RandomForestClassifier
+import joblib
+import os
+
+np.random.seed(42)
+X = np.random.rand(100, 5)
+y = np.random.randint(0, 2, size=100)
+
+model = RandomForestClassifier(random_state=42)
+model.fit(X, y)
+
+os.makedirs("models", exist_ok=True)
+joblib.dump(model, "models/rf_model.pkl")
+
+df = pd.DataFrame(X, columns=[f"feature_{i}" for i in range(5)])
+df.to_csv("data/sample.csv", index=False)</code></pre>
+    </section>
+
+    <section>
+      <h3>🛠️ Reproducibility Checklist</h3>
+      <ul>
+        <li>[x] Use requirements.txt or pyproject.toml</li>
+        <li>[x] Set random seeds</li>
+        <li>[x] Save models and data artifacts</li>
+        <li>[x] Avoid hardcoded paths</li>
+        <li>[x] Document your pipeline</li>
+        <li>[x] Use version control (Git)</li>
+      </ul>
+
+      <h3>✅ Lessons Learned</h3>
+      <ul>
+        <li>Reproducibility = collaboration and deployment readiness.</li>
+        <li>Docker, virtualenv, and notebooks help a lot.</li>
+        <li>Tracking artifacts and seeds helps debugging.</li>
+      </ul>
+
+      <h3>⚠️ Common Mistakes</h3>
+      <ul>
+        <li>Not logging environment or versions.</li>
+        <li>Skipping .gitignore and polluting repos.</li>
+        <li>Using notebook state instead of reproducible scripts.</li>
+      </ul>
+
+      <h3>🎯 Practice Challenge</h3>
+      <ul>
+        <li>Pick a recent model.</li>
+        <li>Export model, data, and notebook.</li>
+        <li>Create requirements.txt.</li>
+        <li>Share with someone — can they run it?</li>
+      </ul>
+
+      <h3>📎 Tools & Resources</h3>
+      <ul>
+        <li>joblib, pickle, dvc, mlflow, virtualenv, conda, Docker</li>
+        <li>Article: “Best Practices for Reproducible ML” – TDS</li>
+        <li>Tool: pipreqs (generate minimal requirements.txt)</li>
+      </ul>
+
+      <h3>🧠 Final Thought</h3>
+      <p>“It works on my machine” is just the beginning. Let’s build things that work everywhere, not just in our notebooks.</p>
+    </section>
+
+    <section style="margin-top: 40px;">
+      <h3>💙 Want to Support This Project?</h3>
+      <a href="http://link.mercadopago.com.br/datasciencefunbook" target="_blank">
+        <button>💳 Apoiar com Mercado Pago</button>
+      </a>
+      <p>Or scan the QR Code to contribute with Pix:</p>
+      <img src="pix_qrcode.png" alt="QR Code Pix" style="width:200px;">
+    </section>
+
+    <p style="margin-top: 40px;">
+      🔙 <a href="chapter3.html">Back to Chapter 3</a> &nbsp;&nbsp;&nbsp; 📘 <a href="chapter5.html">Next Chapter →</a>
+    </p>
+
+    <footer style="margin-top: 40px;">
+      <p>&copy; 2025 Howard Roatti. All rights reserved.</p>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

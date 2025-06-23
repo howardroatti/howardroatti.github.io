@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Science: From Gut Feelings to Confidence Intervals</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 280px;
+      height: 100vh;
+      border: none;
+      overflow-y: auto;
+      background-color: #f4f4f4;
+    }
+    .main-content {
+      flex: 1;
+      padding: 30px;
+      max-width: 800px;
+    }
+    .book-title {
+      background-color: #003366;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <iframe class="sidebar" src="../summary.html" title="Summary"></iframe>
+
+  <div class="main-content">
+    <div class="book-title">
+      📘 From Insight to Deploy: A Lighthearted Journey Through Deep Data Science
+    </div>
+
+    <header>
+      <h1>📏 Data Science: From Gut Feelings to Confidence Intervals</h1>
+      <h2>Season 1 — Episode 3</h2>
+    </header>
+
+    <section>
+      <h3>🎙️ Original Episode</h3>
+      <p>If you’ve ever looked at a messy spreadsheet and thought, “There’s got to be a better way,” congratulations, you might be a data scientist in the making!</p>
+
+      <h4>The Reality of Data Science</h4>
+      <ul>
+        <li>Cleaning data that looks like it survived an apocalypse.</li>
+        <li>Explaining that correlation is not causation (ice cream ≠ shark attacks).</li>
+        <li>Making a simple bar chart look "insightful".</li>
+        <li>Debugging errors caused by a missing comma.</li>
+      </ul>
+
+      <h4>Why We Love It Anyway</h4>
+      <ul>
+        <li>Finding trends and feeling like Sherlock Holmes.</li>
+        <li>Watching your model work for once.</li>
+        <li>Automating boring tasks.</li>
+        <li>Using confidence intervals to sound smarter than we are.</li>
+      </ul>
+
+      <p>So when someone says, "Let's make data-driven decisions!", a data scientist is probably cleaning data behind the scenes.</p>
+    </section>
+
+    <section>
+      <h3>🔍 Let’s Go Deeper…</h3>
+      <p>We all love “insights” — but how confident are we in them? A confidence interval says: "We’re 95% sure it’s between X and Y."</p>
+
+      <h4>📚 What is a Confidence Interval?</h4>
+      <ul>
+        <li>A range of values likely to contain the true parameter.</li>
+        <li>Components: Point estimate, Standard Error, Confidence Level.</li>
+        <li>Example: “Average = 3.2 ± 0.6 (95% CI)”</li>
+      </ul>
+
+      <h4>💻 Hands-on – Simulating Confidence Intervals in Python</h4>
+      <pre><code>import numpy as np
+import scipy.stats as stats
+
+data = np.random.normal(loc=3.2, scale=0.6, size=100)
+
+mean = np.mean(data)
+sem = stats.sem(data)
+
+confidence = 0.95
+interval = stats.t.interval(confidence, df=len(data)-1, loc=mean, scale=sem)
+
+print(f"Sample mean: {mean:.2f}")
+print(f"95% confidence interval: {interval}")</code></pre>
+    </section>
+
+    <section>
+      <h3>✅ Lessons Learned</h3>
+      <ul>
+        <li>Confidence intervals quantify uncertainty in estimates.</li>
+        <li>They’re key for decisions, tests, and reporting.</li>
+        <li>Wider = more uncertainty; narrower = more data/less variance.</li>
+      </ul>
+
+      <h3>⚠️ Common Mistakes</h3>
+      <ul>
+        <li>Confusing confidence vs. prediction intervals.</li>
+        <li>Misinterpreting the 95% CI statement.</li>
+        <li>Ignoring sample size — small samples = big error margins.</li>
+      </ul>
+
+      <h3>🎯 Practice Challenge</h3>
+      <ul>
+        <li>Simulate confidence intervals for proportions and mean differences.</li>
+        <li>Visualize results with matplotlib (e.g., plt.fill_between).</li>
+      </ul>
+
+      <h3>📎 Recommended Tools and Resources</h3>
+      <ul>
+        <li>scipy.stats, statsmodels, seaborn</li>
+        <li>Book: “Statistical Thinking for Data Science” – Allen B. Downey</li>
+        <li>Article: “Why Confidence Intervals Beat p-values”</li>
+      </ul>
+
+      <h3>🧠 Final Thought</h3>
+      <p>Confidence intervals are how we say “I don’t know… but I’ve got a pretty good idea.” They bring scientific humility to business — and that’s something we could use more of.</p>
+    </section>
+
+    <section style="margin-top: 40px;">
+      <h3>💙 Want to Support This Project?</h3>
+      <a href="http://link.mercadopago.com.br/datasciencefunbook" target="_blank">
+        <button>💳 Apoiar com Mercado Pago</button>
+      </a>
+      <p>Or scan the QR Code to contribute with Pix:</p>
+      <img src="pix_qrcode.png" alt="QR Code Pix" style="width:200px;">
+    </section>
+
+    <p style="margin-top: 40px;">
+      🔙 <a href="chapter2.html">Back to Chapter 2</a> &nbsp;&nbsp;&nbsp; 📘 <a href="chapter4.html">Next Chapter →</a>
+    </p>
+
+    <footer style="margin-top: 40px;">
+      <p>&copy; 2025 Howard Roatti. All rights reserved.</p>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

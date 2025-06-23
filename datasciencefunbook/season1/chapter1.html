@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Science: The Art of Making Spreadsheets Look Magical</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 280px;
+      height: 100vh;
+      border: none;
+      overflow-y: auto;
+      background-color: #f4f4f4;
+    }
+    .main-content {
+      flex: 1;
+      padding: 30px;
+      max-width: 800px;
+    }
+    .book-title {
+      background-color: #003366;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <iframe class="sidebar" src="../summary.html" title="Summary"></iframe>
+
+  <div class="main-content">
+    <div class="book-title">
+      📘 From Insight to Deploy: A Lighthearted Journey Through Deep Data Science
+    </div>
+
+    <header>
+      <h1>🧙‍♂️ Data Science: The Art of Making Spreadsheets Look Magical</h1>
+      <h2>Season 1 — Episode 1</h2>
+    </header>
+
+    <section>
+      <h3>🎙️ Original Episode</h3>
+      <p>If you've ever wondered what data scientists do, here's a quick summary: we take messy data, clean it, analyze it, build models, and then try to convince people that our 95% accurate predictions are somehow better than gut feelings.</p>
+      <p>At its core, data science is about storytelling — except our stories are written in Python, SQL, and the occasional desperate Google search.</p>
+      <p>People think we build AI to predict the future. Actually, we spend 80% of the time cleaning data and 20% debugging why it’s not running.</p>
+      <p>“Garbage in, garbage out”? That’s our life. The model isn’t broken — the 50 spellings of “California” are.</p>
+      <p>Still, data science is amazing. It’s detective work: finding patterns, making sense of chaos, and impressing people with charts.</p>
+      <p>And nothing beats the feeling when code works after 3 hours of pain (even if you don’t know why).</p>
+      <p>So next time, instead of “can you build an AI?”, just buy us a coffee.</p>
+    </section>
+
+    <section>
+      <h3>🔍 Let’s Go Deeper…</h3>
+      <p>The post above captures the chaotic beauty of data science. Now, let's turn those jokes into practical skills.</p>
+
+      <h4>💻 Hands-on Mini Project: <em>'Customer Satisfaction – Dirty Data Edition'</em></h4>
+      <pre><code>import pandas as pd
+import numpy as np
+
+df = pd.read_csv("customer_satisfaction_dirty.csv")
+print(df.info())
+print(df.describe(include='all'))
+
+df['rating'] = df['rating'].replace({'bad': 1, 'average': 3, 'good': 5}).astype(float)
+df['rating'].fillna(df['rating'].median(), inplace=True)
+
+df['state'] = df['state'].str.upper().str.strip().replace({
+    'CALIFORNIA': 'CA', 'CALIF.': 'CA', 'CA ': 'CA'
+})
+
+df['response_date'] = pd.to_datetime(df['response_date'], errors='coerce')
+
+q1 = df['time_on_site'].quantile(0.25)
+q3 = df['time_on_site'].quantile(0.75)
+iqr = q3 - q1
+lower = q1 - 1.5 * iqr
+upper = q3 + 1.5 * iqr
+df = df[(df['time_on_site'] >= lower) & (df['time_on_site'] <= upper)]
+
+df = df[(df['age'] >= 0) & (df['age'] <= 120)]</code></pre>
+    </section>
+
+    <section>
+      <h3>✅ Lessons Learned</h3>
+      <ul>
+        <li>Real data is never clean out of the box.</li>
+        <li>Standardizing values and formats is critical.</li>
+        <li>Cleaning data is where the magic begins.</li>
+      </ul>
+
+      <h3>⚠️ Common Mistakes</h3>
+      <ul>
+        <li>Filling NaNs with the mean without checking distribution.</li>
+        <li>Ignoring inconsistent categorical labels.</li>
+        <li>Trusting Excel exports blindly.</li>
+      </ul>
+
+      <h3>🎯 Practice Challenge</h3>
+      <ul>
+        <li>Apply techniques to a new messy CSV (e.g. sales log).</li>
+        <li>Generate before/after profiling with <code>ydata-profiling</code>.</li>
+      </ul>
+
+      <h3>📎 Recommended Tools</h3>
+      <ul>
+        <li>Libraries: <code>pandas</code>, <code>numpy</code>, <code>ydata-profiling</code>, <code>great_expectations</code></li>
+        <li>Useful methods: <code>.str</code>, <code>.replace</code>, <code>.fillna</code>, <code>.dropna</code>, <code>.apply</code></li>
+      </ul>
+    </section>
+
+    <section style="margin-top: 40px;">
+      <h3>💙 Want to Support This Project?</h3>
+      <a href="http://link.mercadopago.com.br/datasciencefunbook" target="_blank">
+        <button>💳 Apoiar com Mercado Pago</button>
+      </a>
+      <p>Or scan the QR Code to contribute with Pix:</p>
+      <img src="pix_qrcode.png" alt="QR Code Pix" style="width:200px;">
+    </section>
+
+    <p style="margin-top: 40px;">
+      📘 <a href="chapter2.html">Next Chapter →</a>
+    </p>
+
+    <footer style="margin-top: 40px;">
+      <p>&copy; 2025 Howard Roatti. All rights reserved.</p>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

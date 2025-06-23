@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Science: Why Did the Model Do That?</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 280px;
+      height: 100vh;
+      border: none;
+      overflow-y: auto;
+      background-color: #f4f4f4;
+    }
+    .main-content {
+      flex: 1;
+      padding: 30px;
+      max-width: 800px;
+    }
+    .book-title {
+      background-color: #003366;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <iframe class="sidebar" src="../summary.html" title="Summary"></iframe>
+
+  <div class="main-content">
+    <div class="book-title">
+      📘 From Insight to Deploy: A Lighthearted Journey Through Deep Data Science
+    </div>
+
+    <header>
+      <h1>🧠 Data Science: Why Did the Model Do That? (Explaining the Unexplainable)</h1>
+      <h2>Season 1 — Episode 6</h2>
+    </header>
+
+    <section>
+      <h3>🎙️ Original Episode</h3>
+      <p>Imagine this:</p>
+      <ul>
+        <li>You built a model.</li>
+        <li>It performs well.</li>
+        <li>Stakeholder: “Why did it predict that?”</li>
+        <li>You: “Uhhh…”</li>
+      </ul>
+
+      <p>Welcome to the world of model interpretability — where your job is to make a black box transparent using tools, charts, and occasionally, dark arts.</p>
+    </section>
+
+    <section>
+      <h3>🔍 Let’s Go Deeper…</h3>
+      <p>Not all models are interpretable. Linear Regression? Clear. XGBoost? Kinda. Deep Neural Networks? Good luck.</p>
+
+      <h4>🛠️ Types of Explainability</h4>
+      <ul>
+        <li>Global: What drives predictions in general?</li>
+        <li>Local: Why did it predict this one result?</li>
+        <li>Model-specific vs Model-agnostic</li>
+      </ul>
+
+      <h4>🔦 Popular Tools</h4>
+      <ul>
+        <li>SHAP (Shapley values): Local + Global + mathy</li>
+        <li>LIME: Local linear approximations</li>
+        <li>Feature importance (sklearn)</li>
+        <li>Partial Dependence Plots (PDP)</li>
+      </ul>
+
+      <h4>💻 Hands-on – Using SHAP to Explain a Model</h4>
+      <pre><code>import shap
+import xgboost as xgb
+from sklearn.datasets import load_boston
+from sklearn.model_selection import train_test_split
+
+boston = load_boston()
+X_train, X_test, y_train, y_test = train_test_split(
+    boston.data, boston.target, test_size=0.2, random_state=42
+)
+
+model = xgb.XGBRegressor()
+model.fit(X_train, y_train)
+
+explainer = shap.Explainer(model, X_train)
+shap_values = explainer(X_test)
+
+# Summary plot
+shap.plots.beeswarm(shap_values)</code></pre>
+    </section>
+
+    <section>
+      <h3>✅ Lessons Learned</h3>
+      <ul>
+        <li>Transparency builds trust — especially with non-tech stakeholders.</li>
+        <li>Choose explanation methods based on model and context.</li>
+        <li>Visuals help demystify predictions.</li>
+      </ul>
+
+      <h3>⚠️ Common Mistakes</h3>
+      <ul>
+        <li>Overinterpreting noisy SHAP values.</li>
+        <li>Ignoring limitations of explainability tools.</li>
+        <li>Trying to explain the inexplicable (looking at you, deep nets).</li>
+      </ul>
+
+      <h3>🎯 Practice Challenge</h3>
+      <ul>
+        <li>Train a black-box model on tabular data.</li>
+        <li>Use SHAP and LIME to explain individual predictions.</li>
+        <li>Compare outputs: Are they consistent?</li>
+      </ul>
+
+      <h3>📎 Tools & Resources</h3>
+      <ul>
+        <li>SHAP, LIME, Eli5, sklearn.inspection</li>
+        <li>Blog: “SHAP for Humans” by Christoph Molnar</li>
+        <li>Book: “Interpretable ML” (free online)</li>
+      </ul>
+
+      <h3>🧠 Final Thought</h3>
+      <p>If a model is too powerful to explain, maybe it’s too dangerous to use blindly. Explanations aren’t just for stakeholders — they’re for ourselves too.</p>
+    </section>
+
+    <section style="margin-top: 40px;">
+      <h3>💙 Want to Support This Project?</h3>
+      <a href="http://link.mercadopago.com.br/datasciencefunbook" target="_blank">
+        <button>💳 Apoiar com Mercado Pago</button>
+      </a>
+      <p>Or scan the QR Code to contribute with Pix:</p>
+      <img src="pix_qrcode.png" alt="QR Code Pix" style="width:200px;">
+    </section>
+
+    <p style="margin-top: 40px;">
+      🔙 <a href="chapter5.html">Back to Chapter 5</a> &nbsp;&nbsp;&nbsp; 📘 <a href="chapter7.html">Next Chapter →</a>
+    </p>
+
+    <footer style="margin-top: 40px;">
+      <p>&copy; 2025 Howard Roatti. All rights reserved.</p>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

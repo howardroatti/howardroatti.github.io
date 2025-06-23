@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Science: The Most Honest Answer</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 280px;
+      height: 100vh;
+      border: none;
+      overflow-y: auto;
+      background-color: #f4f4f4;
+    }
+    .main-content {
+      flex: 1;
+      padding: 30px;
+      max-width: 800px;
+    }
+    .book-title {
+      background-color: #003366;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <iframe class="sidebar" src="../summary.html" title="Summary"></iframe>
+
+  <div class="main-content">
+    <div class="book-title">
+      📘 From Insight to Deploy: A Lighthearted Journey Through Deep Data Science
+    </div>
+
+    <header>
+      <h1>🤔 Data Science: The Most Honest Answer in Data Science</h1>
+      <h2>Season 1 — Episode 2</h2>
+    </header>
+
+    <section>
+      <h3>🎙️ Original Episode</h3>
+      <p>Ah, Data Science, the mystical blend of statistics, coding, and explaining to your family that you don’t fix WiFi routers.</p>
+      <p>We don’t just press a button and let AI do its magic (though we wish we could). Instead, we:</p>
+      <ul>
+        <li>Wrangle messy datasets that look like they were organized by a toddler.</li>
+        <li>Write complex queries to extract insights that could’ve been answered with common sense.</li>
+        <li>Build machine learning models that work perfectly, until they meet real-world data.</li>
+        <li>Make colorful charts that stakeholders will actually look at.</li>
+      </ul>
+      <p>If you ask a data scientist whether a model is good, the answer is almost always "It depends." Depends on the data quality, business goals, computational resources, the phase of the moon—okay, maybe not the last one, but you get the idea.</p>
+      <p>Despite the challenges, data science is amazing. Few things are as satisfying as:</p>
+      <ul>
+        <li>Watching your model’s accuracy improve after hours of tweaking.</li>
+        <li>Finding an insight that no one else saw.</li>
+        <li>Automating a boring task so you never have to do it again.</li>
+      </ul>
+      <p>So if you ever see a data scientist staring blankly at their screen, they’re not daydreaming. They’re just mentally preparing for their next round of debugging.</p>
+    </section>
+
+    <section>
+      <h3>🔍 Let’s Go Deeper…</h3>
+      <p>“It depends” is not being vague — it's being rigorous. In data science, context is everything. A model isn’t “good” or “bad” on its own — it’s only meaningful relative to a goal, a dataset, and a constraint.</p>
+
+      <h4>📚 Key Factors That "It Depends" On</h4>
+      <ul>
+        <li>Data quality: Is the dataset clean, complete, and representative?</li>
+        <li>Business objective: Are you optimizing for revenue, retention, or something else?</li>
+        <li>Performance metric: Accuracy? Precision? Recall? F1? AUC? It depends.</li>
+        <li>Risk tolerance: Can the model make mistakes? What kind?</li>
+        <li>Interpretability needs: Does the model need to be explainable to stakeholders or regulators?</li>
+        <li>Deployment constraints: Is the model going on a server, an edge device, or a PowerPoint?</li>
+      </ul>
+
+      <h4>💻 Hands-on Mini Project – Model Comparison With Context</h4>
+      <pre><code>from sklearn.datasets import make_classification
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report
+
+X, y = make_classification(n_samples=1000, n_features=10, weights=[0.85, 0.15], random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, stratify=y, random_state=42)
+
+models = {
+    "Logistic Regression": LogisticRegression(),
+    "Random Forest": RandomForestClassifier()
+}
+
+for name, model in models.items():
+    model.fit(X_train, y_train)
+    print(f"\n{name}:\n")
+    y_pred = model.predict(X_test)
+    print(classification_report(y_test, y_pred, digits=3))</code></pre>
+    </section>
+
+    <section>
+      <h3>✅ Lessons Learned</h3>
+      <ul>
+        <li>“Best model” is always context-dependent.</li>
+        <li>Evaluation metrics should align with business risk.</li>
+        <li>Trade-offs (accuracy vs interpretability, latency vs precision) are everywhere.</li>
+        <li>Data scientists must ask better questions before giving answers.</li>
+      </ul>
+
+      <h3>⚠️ Common Pitfalls</h3>
+      <ul>
+        <li>Using accuracy on imbalanced datasets.</li>
+        <li>Choosing a model just because it scores higher in Kaggle.</li>
+        <li>Ignoring domain constraints.</li>
+        <li>Failing to involve stakeholders early.</li>
+      </ul>
+
+      <h3>🎯 Practice Challenge</h3>
+      <ul>
+        <li>Given a churn dataset:</li>
+        <li>Define different business goals (reduce churn vs maximize upsell).</li>
+        <li>Train two models with different evaluation metrics.</li>
+        <li>Present pros and cons of each model for different goals.</li>
+      </ul>
+
+      <h3>📎 Recommended Tools and Reads</h3>
+      <ul>
+        <li>sklearn.metrics: classification_report, confusion_matrix, roc_auc_score</li>
+        <li>Reading: “Confusion Matrix Cookbook” by Machine Learning Mastery</li>
+        <li>Tools: Optuna, MLflow, Weights & Biases</li>
+      </ul>
+
+      <h3>🧠 Final Thought</h3>
+      <p>“It depends” isn’t a cop-out — it’s a superpower. Learning when to say it, and what follows next, is what separates good data scientists from great ones.</p>
+    </section>
+
+    <section style="margin-top: 40px;">
+      <h3>💙 Want to Support This Project?</h3>
+      <a href="http://link.mercadopago.com.br/datasciencefunbook" target="_blank">
+        <button>💳 Apoiar com Mercado Pago</button>
+      </a>
+      <p>Or scan the QR Code to contribute with Pix:</p>
+      <img src="pix_qrcode.png" alt="QR Code Pix" style="width:200px;">
+    </section>
+
+    <p style="margin-top: 40px;">
+      🔙 <a href="chapter1.html">Back to Chapter 1</a> &nbsp;&nbsp;&nbsp;
+      📘 <a href="chapter3.html">Next Chapter →</a>
+    </p>
+
+    <footer style="margin-top: 40px;">
+      <p>&copy; 2025 Howard Roatti. All rights reserved.</p>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

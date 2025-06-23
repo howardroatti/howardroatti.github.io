@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Science: Random Forests and Other Deceptively Named Creatures</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 280px;
+      height: 100vh;
+      border: none;
+      overflow-y: auto;
+      background-color: #f4f4f4;
+    }
+    .main-content {
+      flex: 1;
+      padding: 30px;
+      max-width: 800px;
+    }
+    .book-title {
+      background-color: #003366;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <iframe class="sidebar" src="../summary.html" title="Summary"></iframe>
+
+  <div class="main-content">
+    <div class="book-title">
+      📘 From Insight to Deploy: A Lighthearted Journey Through Deep Data Science
+    </div>
+
+    <header>
+      <h1>🌲 Data Science: Random Forests and Other Deceptively Named Creatures</h1>
+      <h2>Season 1 — Episode 5</h2>
+    </header>
+
+    <section>
+      <h3>🎙️ Original Episode</h3>
+      <p>Ah, data science, the magical land where words mean completely different things.<br>
+      Random Forest? Not about trees.<br>
+      Naïve Bayes? Not actually naïve.<br>
+      Neural Networks? No brains involved.</p>
+
+      <h4>The Daily Absurdities</h4>
+      <ul>
+        <li>Explaining to stakeholders why their "favorite KPI" makes no sense.</li>
+        <li>Pipelines that crash during the meeting.</li>
+        <li>Datasets full of NaNs and cat videos.</li>
+        <li>“Can we just use Excel instead?”</li>
+      </ul>
+
+      <h4>Why We Stay Sane (Sort of)</h4>
+      <ul>
+        <li>Finding the perfect hyperparameters = adrenaline rush.</li>
+        <li>Spotting hidden patterns = conspiracy unlocked.</li>
+        <li>Mind-blowing visualizations = chef’s kiss.</li>
+        <li>Automation = freedom from repetition.</li>
+      </ul>
+
+      <p>Smile at your local data scientist. They’ve seen things you wouldn’t believe.</p>
+    </section>
+
+    <section>
+      <h3>🔍 Let’s Go Deeper…</h3>
+      <h4>🌳 What *is* a Random Forest?</h4>
+      <p>A Random Forest is an ensemble of decision trees trained on bootstrapped data. Like a crowd of experts — vote, then predict.</p>
+
+      <p>✔️ Good for:</p>
+      <ul>
+        <li>Tabular data</li>
+        <li>Classification and regression</li>
+        <li>Handling missing values and nonlinearities</li>
+      </ul>
+
+      <p>❌ Watch out:</p>
+      <ul>
+        <li>Hard to interpret</li>
+        <li>Can be slow with many trees</li>
+      </ul>
+
+      <h4>💻 Hands-on – Building a Random Forest</h4>
+      <pre><code>from sklearn.datasets import load_iris
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report
+
+data = load_iris()
+X_train, X_test, y_train, y_test = train_test_split(
+    data.data, data.target, test_size=0.3, random_state=42
+)
+
+model = RandomForestClassifier(n_estimators=100, random_state=42)
+model.fit(X_train, y_train)
+
+y_pred = model.predict(X_test)
+print(classification_report(y_test, y_pred, target_names=data.target_names))
+
+# Bonus: Feature importance plot
+import pandas as pd
+import matplotlib.pyplot as plt
+
+importances = model.feature_importances_
+feat_names = data.feature_names
+
+pd.Series(importances, index=feat_names).sort_values().plot.barh()
+plt.title("Feature Importance – Random Forest")
+plt.tight_layout()
+plt.show()</code></pre>
+    </section>
+
+    <section>
+      <h3>✅ Lessons Learned</h3>
+      <ul>
+        <li>Random Forests = robustness via randomness.</li>
+        <li>Ensembles beat individual models.</li>
+        <li>Feature importance boosts explainability.</li>
+      </ul>
+
+      <h3>⚠️ Common Mistakes</h3>
+      <ul>
+        <li>Treating black-box models like oracles.</li>
+        <li>Using defaults without tuning.</li>
+        <li>Overfitting with too many trees and small data.</li>
+      </ul>
+
+      <h3>🎯 Practice Challenge</h3>
+      <ul>
+        <li>Use Random Forest on a churn dataset.</li>
+        <li>Test different n_estimators and max_depth.</li>
+        <li>Plot the confusion matrix and interpret errors.</li>
+      </ul>
+
+      <h3>📎 Tools & Resources</h3>
+      <ul>
+        <li>scikit-learn, dtreeviz</li>
+        <li>Paper: “Understanding Random Forests” – Louppe (2014)</li>
+      </ul>
+
+      <h3>🧠 Final Thought</h3>
+      <p>Random Forests aren’t random. They’re a democratic ensemble for smarter predictions — no trees harmed in the process.</p>
+    </section>
+
+    <section style="margin-top: 40px;">
+      <h3>💙 Want to Support This Project?</h3>
+      <a href="http://link.mercadopago.com.br/datasciencefunbook" target="_blank">
+        <button>💳 Apoiar com Mercado Pago</button>
+      </a>
+      <p>Or scan the QR Code to contribute with Pix:</p>
+      <img src="pix_qrcode.png" alt="QR Code Pix" style="width:200px;">
+    </section>
+
+    <p style="margin-top: 40px;">
+      🔙 <a href="chapter4.html">Back to Chapter 4</a> &nbsp;&nbsp;&nbsp; 📘 <a href="chapter6.html">Next Chapter →</a>
+    </p>
+
+    <footer style="margin-top: 40px;">
+      <p>&copy; 2025 Howard Roatti. All rights reserved.</p>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

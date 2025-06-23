@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Science: Data Doesn’t Speak. It Mumbles.</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 280px;
+      height: 100vh;
+      border: none;
+      overflow-y: auto;
+      background-color: #f4f4f4;
+    }
+    .main-content {
+      flex: 1;
+      padding: 30px;
+      max-width: 800px;
+    }
+    .book-title {
+      background-color: #003366;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <iframe class="sidebar" src="../summary.html" title="Summary"></iframe>
+
+  <div class="main-content">
+    <div class="book-title">
+      📘 From Insight to Deploy: A Lighthearted Journey Through Deep Data Science
+    </div>
+
+    <header>
+      <h1>🗣️ Data Science: Data Doesn’t Speak. It Mumbles.</h1>
+      <h2>Season 1 — Episode 7</h2>
+    </header>
+
+    <section>
+      <h3>🎙️ Original Episode</h3>
+      <p>“Let the data speak for itself,” they say. But data doesn’t speak. It mumbles. It whispers contradictions. It makes inside jokes only statisticians get.</p>
+
+      <p>You want insights? You’ll need to:</p>
+      <ul>
+        <li>Clean data that’s more “interpretive dance” than CSV.</li>
+        <li>Plot things 14 different ways before one makes sense.</li>
+        <li>Ask the same business question five times, five ways.</li>
+        <li>Realize the metric you're using doesn't match the goal.</li>
+      </ul>
+
+      <p>But when the signal emerges — clear, honest, actionable — it feels like magic. Like you translated mumbling into music.</p>
+    </section>
+
+    <section>
+      <h3>🔍 Let’s Go Deeper…</h3>
+
+      <h4>👂 Why Data Rarely “Speaks” Clearly</h4>
+      <ul>
+        <li>Missing values, typos, inconsistent formats</li>
+        <li>Biases baked into collection methods</li>
+        <li>Context missing (e.g., “revenue” in which currency?)</li>
+        <li>Sampling errors, seasonal effects, and outliers</li>
+      </ul>
+
+      <h4>🧭 Exploratory Data Analysis (EDA)</h4>
+      <ul>
+        <li>Univariate: histograms, boxplots</li>
+        <li>Bivariate: scatterplots, correlation matrices</li>
+        <li>Multivariate: PCA, pairplots</li>
+        <li>Missing data heatmaps</li>
+      </ul>
+
+      <h4>💻 Hands-on – Let’s Listen to the Data</h4>
+      <pre><code>import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("mumbling_data.csv")
+
+# Visual summary
+print(df.describe(include="all"))
+print(df.isnull().sum())
+
+# Plot relationships
+sns.pairplot(df.dropna())
+plt.show()
+
+# Correlation heatmap
+sns.heatmap(df.corr(), annot=True)
+plt.title("Correlation Matrix")
+plt.show()</code></pre>
+    </section>
+
+    <section>
+      <h3>✅ Lessons Learned</h3>
+      <ul>
+        <li>EDA is where clarity begins.</li>
+        <li>Letting the data “speak” requires deep listening.</li>
+        <li>Visualization is the translator between chaos and clarity.</li>
+      </ul>
+
+      <h3>⚠️ Common Mistakes</h3>
+      <ul>
+        <li>Rushing to modeling without understanding the data.</li>
+        <li>Ignoring missing or weird values.</li>
+        <li>Over-interpreting small correlations or noise.</li>
+      </ul>
+
+      <h3>🎯 Practice Challenge</h3>
+      <ul>
+        <li>Pick a dataset and tell a story visually.</li>
+        <li>Include at least 3 types of plots.</li>
+        <li>Write 3 insights based only on visuals.</li>
+      </ul>
+
+      <h3>📎 Tools & Resources</h3>
+      <ul>
+        <li>Seaborn, matplotlib, pandas-profiling</li>
+        <li>Book: “Storytelling with Data” – Cole Nussbaumer</li>
+        <li>Blog: “What EDA Reveals” – Towards Data Science</li>
+      </ul>
+
+      <h3>🧠 Final Thought</h3>
+      <p>Good analysis doesn’t shout conclusions. It listens, learns, and then whispers something worth hearing.</p>
+    </section>
+
+    <section style="margin-top: 40px;">
+      <h3>💙 Want to Support This Project?</h3>
+      <a href="http://link.mercadopago.com.br/datasciencefunbook" target="_blank">
+        <button>💳 Apoiar com Mercado Pago</button>
+      </a>
+      <p>Or scan the QR Code to contribute with Pix:</p>
+      <img src="pix_qrcode.png" alt="QR Code Pix" style="width:200px;">
+    </section>
+
+    <p style="margin-top: 40px;">
+      🔙 <a href="chapter6.html">Back to Chapter 6</a> &nbsp;&nbsp;&nbsp; 📘 <a href="chapter8.html">Next Chapter →</a>
+    </p>
+
+    <footer style="margin-top: 40px;">
+      <p>&copy; 2025 Howard Roatti. All rights reserved.</p>
+    </footer>
+  </div>
+</div>
+</body>
+</html>
