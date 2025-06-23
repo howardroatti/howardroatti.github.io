@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Science: The Tale of the Phantom Metric</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 280px;
+      height: 100vh;
+      border: none;
+      overflow-y: auto;
+      background-color: #f4f4f4;
+    }
+    .main-content {
+      flex: 1;
+      padding: 30px;
+      max-width: 800px;
+    }
+    .book-title {
+      background-color: #003366;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <iframe class="sidebar" src="../summary.html" title="Summary"></iframe>
+
+  <div class="main-content">
+    <div class="book-title">
+      📘 From Insight to Deploy: A Lighthearted Journey Through Deep Data Science
+    </div>
+
+    <header>
+      <h1>👻 Data Science: The Tale of the Phantom Metric</h1>
+      <h2>Season 1 — Episode 11</h2>
+    </header>
+
+    <section>
+      <h3>🎙️ Original Episode</h3>
+      <p>There’s a number on the dashboard.<br>
+      Nobody knows where it came from.<br>
+      Nobody knows who owns it.<br>
+      Nobody knows if it’s right.</p>
+
+      <p>And yet… it’s in the slide deck.<br>
+      It’s being tracked weekly.<br>
+      It’s driving decisions.</p>
+
+      <p>That, my friends, is a phantom metric.</p>
+
+      <p>They start as experiments, drafts, or proxies.<br>
+      Then someone screenshots it.<br>
+      Then it gets copy-pasted.<br>
+      Then it never dies.</p>
+
+      <p><strong>📌 Tip:</strong> Ask “What decision does this support?”<br>
+      If nobody knows, it might be time to let it go.</p>
+    </section>
+
+    <section>
+      <h3>🔍 Let’s Go Deeper…</h3>
+      <p>Phantom metrics are indicators that outlived their purpose — or worse, never had a purpose to begin with.</p>
+      <p>They clutter dashboards, dilute focus, and erode trust in analytics when people realize: “Wait, we’ve been tracking that… why?”</p>
+
+      <h4>🧟 How Phantom Metrics Are Born</h4>
+      <ul>
+        <li>Prototype: A quick data pull to explore an idea</li>
+        <li>Screenshot: Someone shares it in Slack or a slide</li>
+        <li>Copy-paste: It appears in other dashboards or decks</li>
+        <li>Institutionalized: Nobody questions it anymore</li>
+      </ul>
+
+      <h4>💻 Hands-on – Finding & Retiring Phantom Metrics</h4>
+      <pre><code>metrics = [
+    {"name": "Conversion Rate v3", "owner": None, "used_in_decision": False},
+    {"name": "NPS delta", "owner": "Growth Team", "used_in_decision": True},
+    {"name": "Page Views – All Traffic", "owner": None, "used_in_decision": False}
+]
+
+import pandas as pd
+df = pd.DataFrame(metrics)
+
+# Filter out phantom metrics
+phantoms = df[df["used_in_decision"] == False]
+print("Phantom Metrics to Review:")
+print(phantoms)</code></pre>
+    </section>
+
+    <section>
+      <h3>✅ Lessons Learned</h3>
+      <ul>
+        <li>Every metric must have a decision attached to it.</li>
+        <li>Dashboards are not museums — they are control panels.</li>
+        <li>Fewer, better metrics beat more, questionable ones.</li>
+      </ul>
+
+      <h3>⚠️ Common Mistakes</h3>
+      <ul>
+        <li>Keeping legacy metrics “just in case”</li>
+        <li>Failing to define ownership or purpose</li>
+        <li>Not documenting assumptions behind calculations</li>
+      </ul>
+
+      <h3>🎯 Practice Challenge</h3>
+      <ul>
+        <li>Pick any dashboard with 5+ metrics</li>
+        <li>For each one, answer:
+          <ul>
+            <li>Who owns it?</li>
+            <li>What decision is it tied to?</li>
+            <li>When was it last used for action?</li>
+          </ul>
+        </li>
+        <li>Remove or archive metrics that fail the test</li>
+      </ul>
+
+      <h3>📎 Tools & Resources</h3>
+      <ul>
+        <li>Data Contracts (Monte Carlo, Great Expectations)</li>
+        <li>Book: “Data-Driven” by DJ Patil</li>
+        <li>Article: “The Dangers of Dashboard Creep” – Towards Data Science</li>
+      </ul>
+
+      <h3>🧠 Final Thought</h3>
+      <p>Just because it’s on the dashboard doesn’t mean it’s helping.<br>
+      Haunt your metrics before they haunt you.</p>
+    </section>
+
+    <section style="margin-top: 40px;">
+      <h3>💙 Want to Support This Project?</h3>
+      <a href="http://link.mercadopago.com.br/datasciencefunbook" target="_blank">
+        <button>💳 Apoiar com Mercado Pago</button>
+      </a>
+      <p>Or scan the QR Code to contribute with Pix:</p>
+      <img src="pix_qrcode.png" alt="QR Code Pix" style="width:200px;">
+    </section>
+
+    <p style="margin-top: 40px;">
+      🔙 <a href="chapter10.html">Back to Chapter 10</a> &nbsp;&nbsp;&nbsp; 📘 <a href="chapter12.html">Next Chapter →</a>
+    </p>
+
+    <footer style="margin-top: 40px;">
+      <p>&copy; 2025 Howard Roatti. All rights reserved.</p>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

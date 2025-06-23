@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Science: The Jupyter Notebook from Hell</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 280px;
+      height: 100vh;
+      border: none;
+      overflow-y: auto;
+      background-color: #f4f4f4;
+    }
+    .main-content {
+      flex: 1;
+      padding: 30px;
+      max-width: 800px;
+    }
+    .book-title {
+      background-color: #003366;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <iframe class="sidebar" src="../summary.html" title="Summary"></iframe>
+
+  <div class="main-content">
+    <div class="book-title">
+      📘 From Insight to Deploy: A Lighthearted Journey Through Deep Data Science
+    </div>
+
+    <header>
+      <h1>💻 Data Science: The Jupyter Notebook from Hell</h1>
+      <h2>Season 1 — Episode 16</h2>
+    </header>
+
+    <section>
+      <h3>🎙️ Original Episode</h3>
+      <p>It has 42 cells. <br>
+      None are labeled. <br>
+      Some have been run out of order. <br>
+      The outputs don’t match the code. <br>
+      There’s a CSV from 2019 and a note that says “FIX LATER.”</p>
+
+      <p>You are afraid to run anything.</p>
+
+      <p>It’s not a notebook. It’s a trap.</p>
+
+      <ul>
+        <li>✳ Version control your work.</li>
+        <li>✳ Write markdown like someone will read it (because they will).</li>
+        <li>✳ Don’t fear scripts.</li>
+      </ul>
+
+      <p>Future you will thank you.</p>
+    </section>
+
+    <section>
+      <h3>🔍 Let’s Go Deeper…</h3>
+      <p>Jupyter Notebooks are amazing for exploration, but terrifying when abused.</p>
+      <p>Poor cell management, hidden states, inconsistent outputs, and lack of documentation make them dangerous in collaborative and production contexts.</p>
+
+      <h4>🧟 Signs You’re in a Notebook Nightmare</h4>
+      <ul>
+        <li>Cell outputs don’t match input logic</li>
+        <li>Critical logic buried in cell 37</li>
+        <li>Files written without timestamp/versioning</li>
+        <li>Cells re-run multiple times with different results</li>
+        <li>No clear way to re-execute from scratch</li>
+      </ul>
+
+      <h4>💻 Hands-on – Notebook Hygiene Test</h4>
+      <pre><code># How to check for execution order anomalies in a .ipynb file
+import json
+
+with open("notebook.ipynb", "r", encoding="utf-8") as f:
+    nb = json.load(f)
+
+execution_orders = [cell["execution_count"] for cell in nb["cells"] if cell["cell_type"] == "code"]
+print("Execution counts:", execution_orders)</code></pre>
+    </section>
+
+    <section>
+      <h3>✅ Lessons Learned</h3>
+      <ul>
+        <li>Exploration is fine — just don’t let it grow wild.</li>
+        <li>Markdown is your future memory — use it.</li>
+        <li>Convert notebooks to scripts before production handoff.</li>
+      </ul>
+
+      <h3>⚠️ Common Mistakes</h3>
+      <ul>
+        <li>Using notebooks for production pipelines</li>
+        <li>Saving outputs without tracking the source code version</li>
+        <li>Not clearing and restarting before sharing/exporting</li>
+      </ul>
+
+      <h3>🎯 Practice Challenge</h3>
+      <ol>
+        <li>Take a messy notebook you’ve used recently</li>
+        <li>Add titles, explanations, and cleanup unused cells</li>
+        <li>Restart the kernel and run all cells sequentially</li>
+        <li>Save a copy as `.py` using nbconvert or Jupyter export</li>
+      </ol>
+
+      <h3>📎 Tools & Resources</h3>
+      <ul>
+        <li>nbconvert, jupytext, VSCode’s Jupyter support</li>
+        <li>Blog: “How to Write Clean Notebooks” – fast.ai</li>
+        <li>Tool: ReviewNB for notebook diffs in PRs</li>
+      </ul>
+
+      <h3>🧠 Final Thought</h3>
+      <p>A messy notebook may feel productive today.<br>
+      But tomorrow’s panic will make you wish you cleaned it up.</p>
+    </section>
+
+    <section style="margin-top: 40px;">
+      <h3>💙 Want to Support This Project?</h3>
+      <a href="http://link.mercadopago.com.br/datasciencefunbook" target="_blank">
+        <button>💳 Apoiar com Mercado Pago</button>
+      </a>
+      <p>Or scan the QR Code to contribute with Pix:</p>
+      <img src="pix_qrcode.png" alt="QR Code Pix" style="width:200px;">
+    </section>
+
+    <p style="margin-top: 40px;">
+      🔙 <a href="chapter15.html">Back to Chapter 15</a>
+    </p>
+
+    <footer style="margin-top: 40px;">
+      <p>&copy; 2025 Howard Roatti. All rights reserved.</p>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

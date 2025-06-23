@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Science: The Pipeline Gods Must Be Angry</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 280px;
+      height: 100vh;
+      border: none;
+      overflow-y: auto;
+      background-color: #f4f4f4;
+    }
+    .main-content {
+      flex: 1;
+      padding: 30px;
+      max-width: 800px;
+    }
+    .book-title {
+      background-color: #003366;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <iframe class="sidebar" src="../summary.html" title="Summary"></iframe>
+
+  <div class="main-content">
+    <div class="book-title">
+      📘 From Insight to Deploy: A Lighthearted Journey Through Deep Data Science
+    </div>
+
+    <header>
+      <h1>🛠️ Data Science: The Pipeline Gods Must Be Angry</h1>
+      <h2>Season 1 — Episode 12</h2>
+    </header>
+
+    <section>
+      <h3>🎙️ Original Episode</h3>
+      <p>You didn’t touch the pipeline.<br>
+      You didn’t deploy anything.<br>
+      You didn’t change the schema.<br>
+      And yet… it’s broken.</p>
+
+      <p>Welcome to data engineering.</p>
+
+      <p>Where pipelines fail because:</p>
+      <ul>
+        <li>An upstream table vanished</li>
+        <li>A cron job silently stopped</li>
+        <li>Someone renamed a column</li>
+        <li>The cloud billing ran out</li>
+        <li>A timezone changed somewhere</li>
+      </ul>
+
+      <p>And yes, the error will say “unexpected NoneType.”</p>
+
+      <p>Sacrifice a query to the pipeline gods. They demand it.</p>
+    </section>
+
+    <section>
+      <h3>🔍 Let’s Go Deeper…</h3>
+      <p>Data pipelines are the circulatory system of any data product — and they’re delicate.</p>
+      <p>They break due to invisible dependencies, system noise, or just entropy.</p>
+      <p>You don’t need a code bug to have a broken pipeline. You just need a forgotten assumption.</p>
+
+      <h4>⚙️ Why Do Stable Pipelines Suddenly Break?</h4>
+      <ul>
+        <li>Schema drift: Upstream column gets renamed without notice</li>
+        <li>Orchestration issues: Cron job fails silently on a holiday weekend</li>
+        <li>Cloud quota exhaustion: Free tier is maxed out, data stops flowing</li>
+        <li>Timezone misalignment: Timestamps roll over differently after DST</li>
+        <li>Manual override: A file is “fixed” by hand and corrupts downstream</li>
+      </ul>
+
+      <h4>💻 Hands-on – Monitoring and Logging Pipeline Failures</h4>
+      <pre><code>import logging
+import pandas as pd
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+
+def load_data(path):
+    try:
+        df = pd.read_csv(path)
+        logging.info("Data loaded successfully.")
+        return df
+    except FileNotFoundError:
+        logging.error("Pipeline failed: File not found.")
+    except Exception as e:
+        logging.error(f"Pipeline failed: {e}")
+
+df = load_data("data/input.csv")</code></pre>
+    </section>
+
+    <section>
+      <h3>✅ Lessons Learned</h3>
+      <ul>
+        <li>If your pipeline isn’t monitored, it’s broken — you just don’t know it yet.</li>
+        <li>Failures come from systems you don’t control. Build for that.</li>
+        <li>Good logs are worth more than good intentions.</li>
+      </ul>
+
+      <h3>⚠️ Common Mistakes</h3>
+      <ul>
+        <li>Assuming pipelines are “set and forget”</li>
+        <li>No backfill strategy or reprocessing window</li>
+        <li>Ignoring alert fatigue — noisy systems get ignored</li>
+      </ul>
+
+      <h3>🎯 Practice Challenge</h3>
+      <ol>
+        <li>Choose a pipeline (real or hypothetical)</li>
+        <li>Map all upstream dependencies and failure points</li>
+        <li>Add one logging or alerting mechanism</li>
+        <li>Document what “healthy” looks like for this pipeline</li>
+      </ol>
+
+      <h3>📎 Tools & Resources</h3>
+      <ul>
+        <li>Airflow, Dagster, Prefect for orchestration</li>
+        <li>Great Expectations and dbt tests for validation</li>
+        <li>Article: “How to Build Resilient Data Pipelines” – Towards Data Engineering</li>
+      </ul>
+
+      <h3>🧠 Final Thought</h3>
+      <p>The pipeline gods don’t care about your intentions.<br>
+      They only accept clean logs, tested DAGs, and humble engineers.</p>
+    </section>
+
+    <section style="margin-top: 40px;">
+      <h3>💙 Want to Support This Project?</h3>
+      <a href="http://link.mercadopago.com.br/datasciencefunbook" target="_blank">
+        <button>💳 Apoiar com Mercado Pago</button>
+      </a>
+      <p>Or scan the QR Code to contribute with Pix:</p>
+      <img src="pix_qrcode.png" alt="QR Code Pix" style="width:200px;">
+    </section>
+
+    <p style="margin-top: 40px;">
+      🔙 <a href="chapter11.html">Back to Chapter 11</a>
+    </p>
+
+    <footer style="margin-top: 40px;">
+      <p>&copy; 2025 Howard Roatti. All rights reserved.</p>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

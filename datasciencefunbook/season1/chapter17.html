@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Science: When Your Dashboard Becomes a Crime Scene</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 280px;
+      height: 100vh;
+      border: none;
+      overflow-y: auto;
+      background-color: #f4f4f4;
+    }
+    .main-content {
+      flex: 1;
+      padding: 30px;
+      max-width: 800px;
+    }
+    .book-title {
+      background-color: #003366;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <iframe class="sidebar" src="../summary.html" title="Summary"></iframe>
+
+  <div class="main-content">
+    <div class="book-title">
+      📘 From Insight to Deploy: A Lighthearted Journey Through Deep Data Science
+    </div>
+
+    <header>
+      <h1>🕵️‍♂️ Data Science: When Your Dashboard Becomes a Crime Scene</h1>
+      <h2>Season 1 — Episode 17</h2>
+    </header>
+
+    <section>
+      <h3>🎙️ Original Episode</h3>
+      <p>The number dropped.<br>Everyone noticed.<br>Nobody agrees why.</p>
+      <p>It’s the dashboard’s fault. Or the pipeline’s. Or the metric logic. Or maybe reality changed.</p>
+      <p>Now you’re the detective.</p>
+      <p><strong>🎯 Tip:</strong> Build dashboards like crime scenes:</p>
+      <ul>
+        <li>Preserve the evidence (versioning)</li>
+        <li>Document the timeline (last update, data source)</li>
+        <li>List the suspects (filters, joins, assumptions)</li>
+      </ul>
+      <p>Your future self will appreciate the clues.</p>
+    </section>
+
+    <section>
+      <h3>🔍 Let’s Go Deeper…</h3>
+      <p>When a KPI drops and nobody knows why, your dashboard turns into a forensic investigation site.</p>
+      <p>Dashboards are the interface between raw data and decision-makers — and they must be designed for <strong>debuggability</strong>, not just aesthetics.</p>
+
+      <h4>🔎 What Makes a Dashboard Auditable?</h4>
+      <ul>
+        <li>Timestamps: When was the data last updated?</li>
+        <li>Filters: Are default filters hiding anomalies?</li>
+        <li>Source lineage: Where is the data coming from?</li>
+        <li>Change logs: Who edited what and when?</li>
+        <li>Definitions: What exactly is this metric measuring?</li>
+      </ul>
+
+      <h4>💻 Hands-on – Adding Metadata to Dashboard Exports</h4>
+      <pre><code>import pandas as pd
+from datetime import datetime
+
+df = pd.read_csv("dashboard_data.csv")
+df['exported_at'] = datetime.now()
+df['source'] = "main_kpi_pipeline_v2"
+
+df.to_csv("dashboard_data_with_metadata.csv", index=False)</code></pre>
+    </section>
+
+    <section>
+      <h3>✅ Lessons Learned</h3>
+      <ul>
+        <li>Every dashboard should have a footer with version and update timestamp.</li>
+        <li>Assume people will copy screenshots without context — make context visible.</li>
+        <li>Detective work wastes time — design dashboards to tell the story upfront.</li>
+      </ul>
+
+      <h3>⚠️ Common Mistakes</h3>
+      <ul>
+        <li>No timestamps or data freshness indicators</li>
+        <li>Overuse of cross filters and drill-downs with no reset</li>
+        <li>Copying dashboards without replicating the logic</li>
+      </ul>
+
+      <h3>🎯 Practice Challenge</h3>
+      <ol>
+        <li>Pick a dashboard you use regularly</li>
+        <li>Check if it has timestamps, data source references, and clear metric logic</li>
+        <li>Add or request the missing forensic clues</li>
+        <li>Test: Can someone else debug it without your help?</li>
+      </ol>
+
+      <h3>📎 Tools & Resources</h3>
+      <ul>
+        <li>Superset annotations, Metabase metadata fields, Power BI tooltips</li>
+        <li>dbt Docs for lineage tracking</li>
+        <li>Article: “Design Dashboards That Explain Themselves” – Mode Analytics</li>
+      </ul>
+
+      <h3>🧠 Final Thought</h3>
+      <p>When things go wrong, your dashboard is evidence.<br>
+      Make sure it can survive cross-examination.</p>
+    </section>
+
+    <section style="margin-top: 40px;">
+      <h3>💙 Want to Support This Project?</h3>
+      <a href="http://link.mercadopago.com.br/datasciencefunbook" target="_blank">
+        <button>💳 Apoiar com Mercado Pago</button>
+      </a>
+      <p>Or scan the QR Code to contribute with Pix:</p>
+      <img src="pix_qrcode.png" alt="QR Code Pix" style="width:200px;">
+    </section>
+
+    <p style="margin-top: 40px;">
+      🔙 <a href="chapter16.html">Back to Chapter 16</a> &nbsp;&nbsp;&nbsp; 📘 <a href="chapter18.html">Next Chapter →</a>
+    </p>
+
+    <footer style="margin-top: 40px;">
+      <p>&copy; 2025 Howard Roatti. All rights reserved.</p>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Science: The Metric Was Right (But the World Changed)</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 280px;
+      height: 100vh;
+      border: none;
+      overflow-y: auto;
+      background-color: #f4f4f4;
+    }
+    .main-content {
+      flex: 1;
+      padding: 30px;
+      max-width: 800px;
+    }
+    .book-title {
+      background-color: #003366;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <iframe class="sidebar" src="../summary.html" title="Summary"></iframe>
+
+  <div class="main-content">
+    <div class="book-title">
+      📘 From Insight to Deploy: A Lighthearted Journey Through Deep Data Science
+    </div>
+
+    <header>
+      <h1>🌍 Data Science: The Metric Was Right (But the World Changed)</h1>
+      <h2>Season 1 — Episode 20</h2>
+    </header>
+
+    <section>
+      <h3>🎙️ Original Episode</h3>
+      <p>The metric didn’t move.<br>
+      But the behavior did.<br>
+      The model said “steady.”<br>
+      Reality said “chaos.”</p>
+
+      <p>Sometimes the world shifts, and your KPI doesn’t flinch.<br>
+      Not because the data is wrong — but because the metric is blind.</p>
+
+      <p>📌 Good metrics reflect the world.<br>
+      📌 Great metrics adapt with it.</p>
+
+      <p>Don’t just track what’s easy.<br>
+      Track what matters.</p>
+    </section>
+
+    <section>
+      <h3>🔍 Let’s Go Deeper…</h3>
+      <p>Sometimes the problem isn’t your model or your data — it’s your <strong>definition of success</strong>.</p>
+      <p>Metrics that once made sense can become irrelevant when external conditions change (seasonality, economic shifts, user behavior, etc.).</p>
+
+      <h4>🌐 When Metrics Lose Meaning</h4>
+      <ul>
+        <li>A/B test conversion drops due to a market crash — not the variant</li>
+        <li>Customer churn model ignores new cancellation path</li>
+        <li>KPI remains steady during growth… but masks retention drop</li>
+        <li>Fraud score stays low — but fraud patterns have evolved</li>
+      </ul>
+
+      <h4>💻 Hands-on – Metric Sensitivity Analysis</h4>
+      <pre><code>import pandas as pd
+import numpy as np
+
+np.random.seed(42)
+metric = np.random.normal(loc=0.9, scale=0.01, size=100)
+external = np.concatenate([np.ones(50), np.linspace(1, 2, 50)])  # simulate shift
+
+df = pd.DataFrame({"metric": metric, "external_factor": external})
+correlation = df.corr().iloc[0,1]
+print("📉 Correlation with external factor:", correlation)</code></pre>
+    </section>
+
+    <section>
+      <h3>✅ Lessons Learned</h3>
+      <ul>
+        <li>A metric that doesn’t change isn’t always a good thing.</li>
+        <li>Review KPI definitions regularly — context is dynamic.</li>
+        <li>Include external signals when validating your metrics.</li>
+      </ul>
+
+      <h3>⚠️ Common Mistakes</h3>
+      <ul>
+        <li>Assuming past metrics apply to future problems</li>
+        <li>Ignoring macro trends in metric interpretation</li>
+        <li>Using 'stability' as a proxy for success</li>
+      </ul>
+
+      <h3>🎯 Practice Challenge</h3>
+      <ol>
+        <li>Take one key KPI from your project</li>
+        <li>Analyze how it would behave if external context changed</li>
+        <li>Add at least one complementary metric to offset blind spots</li>
+        <li>Propose a review cadence to adapt your definitions over time</li>
+      </ol>
+
+      <h3>📎 Tools & Resources</h3>
+      <ul>
+        <li>Sensitivity analysis via What-If Tool (Google), EDA libraries</li>
+        <li>Article: “Metric Drift Is Real” – Towards Data Science</li>
+        <li>Book: “How to Measure Anything” by Douglas Hubbard</li>
+      </ul>
+
+      <h3>🧠 Final Thought</h3>
+      <p>Your metrics are only as useful as their relevance.<br>
+      The world won’t warn you when it changes — but your KPIs should.</p>
+    </section>
+
+    <section style="margin-top: 40px;">
+      <h3>💙 Want to Support This Project?</h3>
+      <a href="http://link.mercadopago.com.br/datasciencefunbook" target="_blank">
+        <button>💳 Apoiar com Mercado Pago</button>
+      </a>
+      <p>Or scan the QR Code to contribute with Pix:</p>
+      <img src="pix_qrcode.png" alt="QR Code Pix" style="width:200px;">
+    </section>
+
+    <p style="margin-top: 40px;">
+      🔙 <a href="chapter19.html">Back to Chapter 19</a>
+    </p>
+
+    <footer style="margin-top: 40px;">
+      <p>&copy; 2025 Howard Roatti. All rights reserved.</p>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

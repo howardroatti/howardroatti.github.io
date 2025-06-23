@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Science: Dashboard Drift and Other Nightmares</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 280px;
+      height: 100vh;
+      border: none;
+      overflow-y: auto;
+      background-color: #f4f4f4;
+    }
+    .main-content {
+      flex: 1;
+      padding: 30px;
+      max-width: 800px;
+    }
+    .book-title {
+      background-color: #003366;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <iframe class="sidebar" src="../summary.html" title="Summary"></iframe>
+
+  <div class="main-content">
+    <div class="book-title">
+      📘 From Insight to Deploy: A Lighthearted Journey Through Deep Data Science
+    </div>
+
+    <header>
+      <h1>📊 Data Science: Dashboard Drift and Other Nightmares</h1>
+      <h2>Season 1 — Episode 9</h2>
+    </header>
+
+    <section>
+      <h3>🎙️ Original Episode</h3>
+      <p>You fix the bug. You push the update. Everything looks perfect.</p>
+      <p>Two weeks later, someone says: “Hey… this number looks weird.”</p>
+      <p>And suddenly you’re in an episode of Dashboard CSI.</p>
+
+      <p>Dashboard drift is real. It happens when:</p>
+      <ul>
+        <li>The data schema changes</li>
+        <li>The SQL logic breaks</li>
+        <li>The team ‘fixes’ something without telling you</li>
+        <li>The time filter resets</li>
+        <li>The backend silently explodes</li>
+      </ul>
+
+      <p>Pro tip: if your dashboard never breaks, it’s because nobody is using it.</p>
+      <p>So make peace with the fact that your charts will lie to you. And plan accordingly.</p>
+    </section>
+
+    <section>
+      <h3>🔍 Let’s Go Deeper…</h3>
+
+      <h4>🚨 Common Causes of Dashboard Drift</h4>
+      <ul>
+        <li>Schema changes: Fields disappear or get renamed silently</li>
+        <li>SQL logic updates: Someone changed a JOIN and now it duplicates rows</li>
+        <li>Backend data changes: Aggregations now reflect different definitions</li>
+        <li>Autorefresh settings: Filters reset and cause confusing views</li>
+        <li>Manual data overwrites: Someone updated a CSV — and broke everything</li>
+      </ul>
+
+      <h4>💻 Hands-on – Simulating Drift and Detecting Anomalies</h4>
+      <pre><code>import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Simulate stable metric
+np.random.seed(42)
+days = pd.date_range("2024-01-01", periods=100)
+stable = 500 + np.random.normal(0, 10, size=100)
+
+# Inject drift after day 70
+drift = stable.copy()
+drift[70:] += np.linspace(0, -120, 30)
+
+df = pd.DataFrame({"date": days, "metric": drift})
+df.set_index("date", inplace=True)
+
+# Rolling comparison
+df["rolling_mean"] = df["metric"].rolling(window=7).mean()
+
+# Plot
+df.plot(title="Dashboard Metric with Simulated Drift", figsize=(12,5))
+plt.tight_layout()
+plt.show()</code></pre>
+    </section>
+
+    <section>
+      <h3>✅ Lessons Learned</h3>
+      <ul>
+        <li>Dashboards are only as reliable as the pipelines behind them.</li>
+        <li>Set expectations: visualizations will degrade over time.</li>
+        <li>Monitoring dashboards is just as important as building them.</li>
+      </ul>
+
+      <h3>⚠️ Common Mistakes</h3>
+      <ul>
+        <li>Not version-controlling SQL queries or dashboard definitions</li>
+        <li>Relying on a single person’s memory for KPI logic</li>
+        <li>Ignoring user feedback — often the first signal of drift</li>
+      </ul>
+
+      <h3>🎯 Practice Challenge</h3>
+      <ul>
+        <li>Pick a dashboard you’ve built or use regularly</li>
+        <li>Audit its logic: is the data source still valid? Are filters and definitions consistent?</li>
+        <li>Create a drift alert (e.g., metric falls outside historical range or a column disappears)</li>
+        <li>Present your findings to a peer or stakeholder</li>
+      </ul>
+
+      <h3>📎 Tools & Resources</h3>
+      <ul>
+        <li>dbt tests (not_null, accepted_values, relationships)</li>
+        <li>Great Expectations for data contracts</li>
+        <li>Superset / Metabase / Power BI version control via APIs</li>
+        <li>Article: “What is Dashboard Drift?” – Mode Analytics Blog</li>
+      </ul>
+
+      <h3>🧠 Final Thought</h3>
+      <p>If your dashboard never breaks, it probably doesn’t matter.<br>
+      If it matters, monitor it like you would a production system.</p>
+    </section>
+
+    <section style="margin-top: 40px;">
+      <h3>💙 Want to Support This Project?</h3>
+      <a href="http://link.mercadopago.com.br/datasciencefunbook" target="_blank">
+        <button>💳 Apoiar com Mercado Pago</button>
+      </a>
+      <p>Or scan the QR Code to contribute with Pix:</p>
+      <img src="pix_qrcode.png" alt="QR Code Pix" style="width:200px;">
+    </section>
+
+    <p style="margin-top: 40px;">
+      🔙 <a href="chapter8.html">Back to Chapter 8</a> &nbsp;&nbsp;&nbsp; 📘 <a href="chapter10.html">Next Chapter →</a>
+    </p>
+
+    <footer style="margin-top: 40px;">
+      <p>&copy; 2025 Howard Roatti. All rights reserved.</p>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

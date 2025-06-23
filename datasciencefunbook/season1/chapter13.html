@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Science: When Everything Is a Priority</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 280px;
+      height: 100vh;
+      border: none;
+      overflow-y: auto;
+      background-color: #f4f4f4;
+    }
+    .main-content {
+      flex: 1;
+      padding: 30px;
+      max-width: 800px;
+    }
+    .book-title {
+      background-color: #003366;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <iframe class="sidebar" src="../summary.html" title="Summary"></iframe>
+
+  <div class="main-content">
+    <div class="book-title">
+      📘 From Insight to Deploy: A Lighthearted Journey Through Deep Data Science
+    </div>
+
+    <header>
+      <h1>🔥 Data Science: When Everything Is a Priority</h1>
+      <h2>Season 1 — Episode 13</h2>
+    </header>
+
+    <section>
+      <h3>🎙️ Original Episode</h3>
+      <p>“This metric is critical.”<br>
+      “That one is also urgent.”<br>
+      “And this model needs to go live tomorrow.”</p>
+
+      <p>Suddenly, you’re juggling 7 dashboards, 3 stakeholders, and a partridge in a pear tree.</p>
+      <p>The output drops. The quality slips. The team burns out.</p>
+
+      <p><strong>Focus is not a luxury. It’s a necessity.</strong></p>
+
+      <ul>
+        <li>✳ Prioritize based on business impact.</li>
+        <li>✳ Say no to nice-to-haves.</li>
+        <li>✳ Protect deep work.</li>
+      </ul>
+
+      <p>Because if everything is a priority… nothing is.</p>
+    </section>
+
+    <section>
+      <h3>🔍 Let’s Go Deeper…</h3>
+      <p>The illusion of parallel urgency is one of the greatest threats to productivity in data teams.</p>
+      <p>We often confuse being busy with being impactful, and without focus, both the business and the models suffer.</p>
+
+      <h4>🔄 Priority Chaos in Practice</h4>
+      <ul>
+        <li>Vague goals: Metrics multiply without alignment</li>
+        <li>Constant interruptions: Analytical depth is sacrificed</li>
+        <li>Undefined success criteria: You “finish” work but no one knows what changed</li>
+        <li>Pressure from all sides: Priorities shift weekly — or hourly</li>
+      </ul>
+
+      <h4>💻 Hands-on – Simple Prioritization Framework</h4>
+      <pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+# Example initiatives
+data = {
+    'task': ['Refactor Model A', 'Dashboard for Ops', 'Fix KPI logic', 'Build New ETL'],
+    'impact': [8, 6, 9, 5],
+    'effort': [6, 4, 2, 7]
+}
+df = pd.DataFrame(data)
+
+# Plotting
+plt.figure(figsize=(8,6))
+plt.scatter(df['effort'], df['impact'])
+
+for i in range(len(df)):
+    plt.text(df['effort'][i]+0.1, df['impact'][i], df['task'][i])
+
+plt.xlabel('Effort')
+plt.ylabel('Impact')
+plt.title('Prioritization Matrix')
+plt.grid(True)
+plt.tight_layout()
+plt.show()</code></pre>
+    </section>
+
+    <section>
+      <h3>✅ Lessons Learned</h3>
+      <ul>
+        <li>Not everything urgent is important</li>
+        <li>Tradeoffs are unavoidable — acknowledge them openly</li>
+        <li>A clear “no” is more productive than a vague “yes”</li>
+      </ul>
+
+      <h3>⚠️ Common Mistakes</h3>
+      <ul>
+        <li>Prioritizing based on who shouts the loudest</li>
+        <li>Assigning everything to everyone</li>
+        <li>Using Jira as a to-do list, not a strategic map</li>
+      </ul>
+
+      <h3>🎯 Practice Challenge</h3>
+      <ul>
+        <li>Review your current week’s task list</li>
+        <li>Categorize each item by urgency and impact</li>
+        <li>Pick three key tasks and communicate what you won’t do — and why</li>
+        <li>Track results: what changed by focusing?</li>
+      </ul>
+
+      <h3>📎 Tools & Resources</h3>
+      <ul>
+        <li>Eisenhower Matrix or RICE scoring</li>
+        <li>Book: “Essentialism” by Greg McKeown</li>
+        <li>Blog: “How to Say No Without Saying No” – Atlassian</li>
+      </ul>
+
+      <h3>🧠 Final Thought</h3>
+      <p>Data work without prioritization isn’t productive — it’s just reactive.<br>
+      If everything is on fire, maybe it’s time to build firewalls.</p>
+    </section>
+
+    <section style="margin-top: 40px;">
+      <h3>💙 Want to Support This Project?</h3>
+      <a href="http://link.mercadopago.com.br/datasciencefunbook" target="_blank">
+        <button>💳 Apoiar com Mercado Pago</button>
+      </a>
+      <p>Or scan the QR Code to contribute with Pix:</p>
+      <img src="pix_qrcode.png" alt="QR Code Pix" style="width:200px;">
+    </section>
+
+    <p style="margin-top: 40px;">
+      🔙 <a href="chapter12.html">Back to Chapter 12</a> &nbsp;&nbsp;&nbsp; 📘 <a href="chapter14.html">Next Chapter →</a>
+    </p>
+
+    <footer style="margin-top: 40px;">
+      <p>&copy; 2025 Howard Roatti. All rights reserved.</p>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

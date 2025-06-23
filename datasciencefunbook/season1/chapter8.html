@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Science: The KPI That Cried Wolf</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 280px;
+      height: 100vh;
+      border: none;
+      overflow-y: auto;
+      background-color: #f4f4f4;
+    }
+    .main-content {
+      flex: 1;
+      padding: 30px;
+      max-width: 800px;
+    }
+    .book-title {
+      background-color: #003366;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <iframe class="sidebar" src="../summary.html" title="Summary"></iframe>
+
+  <div class="main-content">
+    <div class="book-title">
+      📘 From Insight to Deploy: A Lighthearted Journey Through Deep Data Science
+    </div>
+
+    <header>
+      <h1>📉 Data Science: The KPI That Cried Wolf</h1>
+      <h2>Season 1 — Episode 8</h2>
+    </header>
+
+    <section>
+      <h3>🎙️ Original Episode</h3>
+      <p>We’ve all seen it.</p>
+      <p>A dashboard lights up like a Christmas tree. KPIs tank. People panic. Slack goes nuclear.</p>
+      <p>Then... nothing. Just a glitch. A misconfigured data pull. A Monday.</p>
+      <p>And next time it happens? People shrug.</p>
+      <p>Congratulations. Your alerts have lost all credibility.</p>
+      <p>KPIs are powerful. But if we don’t treat them with care, they become noise.</p>
+
+      <ul>
+        <li>📌 Not every fluctuation is a crisis.</li>
+        <li>📌 Not every spike is real.</li>
+        <li>📌 Not every metric is actionable.</li>
+      </ul>
+
+      <p>Want people to pay attention?<br>
+      Make your KPIs meaningful, interpretable, and monitored like a hawk.<br>
+      Otherwise, the wolf you cry next time... might be real.</p>
+    </section>
+
+    <section>
+      <h3>🔍 Let’s Go Deeper…</h3>
+
+      <h4>🧭 What Makes a KPI Credible?</h4>
+      <ul>
+        <li>Relevance: It must track a real business objective</li>
+        <li>Stability: Avoid triggering alerts from random fluctuations</li>
+        <li>Interpretability: Anyone should be able to understand what it means</li>
+        <li>Timeliness: Updated frequently enough to matter — not so often it overwhelms</li>
+        <li>Trustworthiness: Based on validated and auditable data sources</li>
+      </ul>
+
+      <h4>💻 Hands-on – KPI Design & Alert Simulation</h4>
+      <pre><code>import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Simulate a KPI signal with noise
+np.random.seed(42)
+days = pd.date_range(start='2024-01-01', periods=100)
+baseline = 100 + np.random.normal(0, 2, size=100).cumsum()
+anomaly_day = 60
+baseline[anomaly_day] += 30  # Inject spike
+
+# Alert rule: raise flag if daily change > 15
+alerts = np.abs(np.diff(baseline, prepend=baseline[0])) > 15
+
+# Plot
+plt.figure(figsize=(12, 5))
+plt.plot(days, baseline, label="KPI Value")
+plt.scatter(days[alerts], baseline[alerts], color='red', label="Alerts")
+plt.title("KPI with Alerts")
+plt.legend()
+plt.tight_layout()
+plt.show()</code></pre>
+    </section>
+
+    <section>
+      <h3>✅ Lessons Learned</h3>
+      <ul>
+        <li>Too many false alarms kill trust.</li>
+        <li>A good KPI is one that people believe in, not just one that exists.</li>
+        <li>Monitor your metrics — and monitor your monitors.</li>
+      </ul>
+
+      <h3>⚠️ Common Mistakes</h3>
+      <ul>
+        <li>Alerting on raw metrics instead of smoothed trends</li>
+        <li>Tracking too many KPIs — more is not better</li>
+        <li>Not reviewing KPI definitions regularly</li>
+      </ul>
+
+      <h3>🎯 Practice Challenge</h3>
+      <ol>
+        <li>Choose a metric you currently track (or find one in a public dataset).</li>
+        <li>Ask:
+          <ul>
+            <li>Is this metric still relevant?</li>
+            <li>What causes it to spike/drop?</li>
+            <li>Who relies on it?</li>
+          </ul>
+        </li>
+        <li>Define a smarter alert rule.</li>
+        <li>Share it with a peer or stakeholder for feedback.</li>
+      </ol>
+
+      <h3>📎 Tools & Resources</h3>
+      <ul>
+        <li>Grafana, Prometheus, Metabase, Superset</li>
+        <li>Article: “Don’t Let Metrics Undermine Your Business” – Harvard Business Review</li>
+        <li>Book: “Measure What Matters” by John Doerr</li>
+      </ul>
+
+      <h3>🧠 Final Thought</h3>
+      <p>Data doesn’t lie, but alerts sure can. Be careful how many false wolves you cry.</p>
+    </section>
+
+    <section style="margin-top: 40px;">
+      <h3>💙 Want to Support This Project?</h3>
+      <a href="http://link.mercadopago.com.br/datasciencefunbook" target="_blank">
+        <button>💳 Apoiar com Mercado Pago</button>
+      </a>
+      <p>Or scan the QR Code to contribute with Pix:</p>
+      <img src="pix_qrcode.png" alt="QR Code Pix" style="width:200px;">
+    </section>
+
+    <p style="margin-top: 40px;">
+      🔙 <a href="chapter7.html">Back to Chapter 7</a> &nbsp;&nbsp;&nbsp; 📘 <a href="chapter9.html">Next Chapter →</a>
+    </p>
+
+    <footer style="margin-top: 40px;">
+      <p>&copy; 2025 Howard Roatti. All rights reserved.</p>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

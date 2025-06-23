@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Science: The Experiment That Wouldn’t Die</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 280px;
+      height: 100vh;
+      border: none;
+      overflow-y: auto;
+      background-color: #f4f4f4;
+    }
+    .main-content {
+      flex: 1;
+      padding: 30px;
+      max-width: 800px;
+    }
+    .book-title {
+      background-color: #003366;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <iframe class="sidebar" src="../summary.html" title="Summary"></iframe>
+
+  <div class="main-content">
+    <div class="book-title">
+      📘 From Insight to Deploy: A Lighthearted Journey Through Deep Data Science
+    </div>
+
+    <header>
+      <h1>🧪 Data Science: The Experiment That Wouldn’t Die</h1>
+      <h2>Season 1 — Episode 19</h2>
+    </header>
+
+    <section>
+      <h3>🎙️ Original Episode</h3>
+      <p>It was just a test.<br>A hypothesis.<br>An idea someone had on a Tuesday.</p>
+      <p>But then...<br>It got a slide.<br>It got a dashboard.<br>It got funding.</p>
+      <p>Now you're supporting a zombie.</p>
+      <p><strong>🎯 Tip:</strong></p>
+      <ul>
+        <li>Archive your old tests</li>
+        <li>Document what was learned</li>
+        <li>Make it easy to shut things down</li>
+      </ul>
+      <p>Otherwise, your backlog becomes a graveyard.</p>
+    </section>
+
+    <section>
+      <h3>🔍 Let’s Go Deeper…</h3>
+      <p>Experiments in data science are essential — but if not properly retired, they become long-term liabilities.</p>
+      <p>Without clear ownership, documentation, and deprecation protocols, ‘temporary’ tests become eternal maintenance burdens.</p>
+
+      <h4>🧟 Signs You’re Maintaining a Zombie Experiment</h4>
+      <ul>
+        <li>You can’t remember what the original hypothesis was</li>
+        <li>The code hasn’t been touched in 6 months — but it still runs</li>
+        <li>Nobody knows who owns the output</li>
+        <li>It’s driving decisions without validation</li>
+        <li>There’s no sunset date or kill switch</li>
+      </ul>
+
+      <h4>💻 Hands-on – Add Expiry to Experiments</h4>
+      <pre><code># Tagging experimental code with expiration metadata
+experiment = {
+    "name": "boosted_ctr_test",
+    "created_at": "2024-03-01",
+    "expires_at": "2024-06-30",
+    "owner": "marketing_analytics"
+}
+
+from datetime import datetime
+
+today = datetime.now().date()
+expiry = datetime.strptime(experiment["expires_at"], "%Y-%m-%d").date()
+
+if today > expiry:
+    print("⚠️ This experiment is expired. Please archive or review.")</code></pre>
+    </section>
+
+    <section>
+      <h3>✅ Lessons Learned</h3>
+      <ul>
+        <li>Track experiments like assets — they require lifecycle management.</li>
+        <li>Temporary tests need clear end criteria.</li>
+        <li>Archiving isn’t deletion — it’s responsible curation.</li>
+      </ul>
+
+      <h3>⚠️ Common Mistakes</h3>
+      <ul>
+        <li>Leaving experiments active after goals are met (or missed)</li>
+        <li>Failing to document results and learnings</li>
+        <li>Not separating test logic from production code</li>
+      </ul>
+
+      <h3>🎯 Practice Challenge</h3>
+      <ol>
+        <li>List 3 experiments (past or present) in your team/project</li>
+        <li>For each, answer: Who owns it? What was learned? Is it still active?</li>
+        <li>If it’s outdated, archive it or flag for shutdown</li>
+        <li>Create an experiment registry to track this moving forward</li>
+      </ol>
+
+      <h3>📎 Tools & Resources</h3>
+      <ul>
+        <li>MLflow for experiment tracking</li>
+        <li>Notion / Confluence for experiment registry</li>
+        <li>Article: “Why You Should Kill Your Old Experiments” – MLOps Community</li>
+      </ul>
+
+      <h3>🧠 Final Thought</h3>
+      <p>Some tests never die. Unless you let them.<br>
+      Close the loop. Clean the backlog. Respect the experiment — and move on.</p>
+    </section>
+
+    <section style="margin-top: 40px;">
+      <h3>💙 Want to Support This Project?</h3>
+      <a href="http://link.mercadopago.com.br/datasciencefunbook" target="_blank">
+        <button>💳 Apoiar com Mercado Pago</button>
+      </a>
+      <p>Or scan the QR Code to contribute with Pix:</p>
+      <img src="pix_qrcode.png" alt="QR Code Pix" style="width:200px;">
+    </section>
+
+    <p style="margin-top: 40px;">
+      🔙 <a href="chapter18.html">Back to Chapter 18</a> &nbsp;&nbsp;&nbsp; 📘 <a href="chapter20.html">Next Chapter →</a>
+    </p>
+
+    <footer style="margin-top: 40px;">
+      <p>&copy; 2025 Howard Roatti. All rights reserved.</p>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

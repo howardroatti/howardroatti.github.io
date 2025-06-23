@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Science: Alerts at 3AM and Other Joys of Deployment</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 280px;
+      height: 100vh;
+      border: none;
+      overflow-y: auto;
+      background-color: #f4f4f4;
+    }
+    .main-content {
+      flex: 1;
+      padding: 30px;
+      max-width: 800px;
+    }
+    .book-title {
+      background-color: #003366;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <iframe class="sidebar" src="../summary.html" title="Summary"></iframe>
+
+  <div class="main-content">
+    <div class="book-title">
+      📘 From Insight to Deploy: A Lighthearted Journey Through Deep Data Science
+    </div>
+
+    <header>
+      <h1>🌙 Data Science: Alerts at 3AM and Other Joys of Deployment</h1>
+      <h2>Season 1 — Episode 15</h2>
+    </header>
+
+    <section>
+      <h3>🎙️ Original Episode</h3>
+      <p>The model is live. The pipeline is humming. The dashboard looks sharp.</p>
+      <p>Then you get a Slack ping at 3:12AM.</p>
+      <p><strong>“KPI looks weird. Can you check?”</strong></p>
+      <p>Welcome to production.</p>
+
+      <p>The joys include:</p>
+      <ul>
+        <li>Unmonitored edge cases</li>
+        <li>Silent schema breaks</li>
+        <li>Random timezone bugs</li>
+        <li>“Hotfixes” in the notebook</li>
+      </ul>
+
+      <p>Deployment isn’t the end. It’s the start of reality.</p>
+      <p><strong>✨ Build for it.</strong></p>
+    </section>
+
+    <section>
+      <h3>🔍 Let’s Go Deeper…</h3>
+      <p>Putting a model into production is not the finish line. It’s where all the <em>real</em> issues begin.</p>
+      <p>Deployments introduce operational concerns: uptime, latency, versioning, logging, security, cost control — and people using it in unexpected ways.</p>
+
+      <h4>🛎️ Common Post-Deployment Surprises</h4>
+      <ul>
+        <li>Model assumptions violated by real-world inputs</li>
+        <li>Unexpected nulls or missing features</li>
+        <li>Changes to upstream data pipelines</li>
+        <li>Sudden shifts in input distributions</li>
+        <li>Infra quota limits (API, storage, compute)</li>
+      </ul>
+
+      <h4>💻 Hands-on – Simulating a Drift Alert Trigger</h4>
+      <pre><code>import numpy as np
+
+# Simulate input feature distribution
+baseline = np.random.normal(loc=50, scale=5, size=1000)
+live_input = np.random.normal(loc=65, scale=5, size=1000)
+
+drift_detected = abs(baseline.mean() - live_input.mean()) > 10
+
+print("🚨 Drift detected?" , drift_detected)</code></pre>
+    </section>
+
+    <section>
+      <h3>✅ Lessons Learned</h3>
+      <ul>
+        <li>Shipping the model is the start of a new lifecycle — not the end of the project.</li>
+        <li>Monitoring and alerting are part of the ML product.</li>
+        <li>Expect that your model will break — plan for recovery, not perfection.</li>
+      </ul>
+
+      <h3>⚠️ Common Mistakes</h3>
+      <ul>
+        <li>Treating deployment as an afterthought</li>
+        <li>No rollback strategy or alert routing</li>
+        <li>Relying on one person to be ‘on-call’ for everything</li>
+      </ul>
+
+      <h3>🎯 Practice Challenge</h3>
+      <ol>
+        <li>Identify a deployed model or system (real or hypothetical)</li>
+        <li>Create a drift test or simple input validation check</li>
+        <li>Define alert criteria and notification channel</li>
+        <li>Document how your team should respond if triggered</li>
+      </ol>
+
+      <h3>📎 Tools & Resources</h3>
+      <ul>
+        <li>Seldon Core, BentoML, FastAPI for ML deployment</li>
+        <li>Evidently AI and Prometheus for post-deploy monitoring</li>
+        <li>Book: “Building Machine Learning Powered Applications” by Emmanuel Ameisen</li>
+      </ul>
+
+      <h3>🧠 Final Thought</h3>
+      <p>You don’t need to panic every time an alert goes off.<br>
+      But if no alert goes off — you should be worried.</p>
+    </section>
+
+    <section style="margin-top: 40px;">
+      <h3>💙 Want to Support This Project?</h3>
+      <a href="http://link.mercadopago.com.br/datasciencefunbook" target="_blank">
+        <button>💳 Apoiar com Mercado Pago</button>
+      </a>
+      <p>Or scan the QR Code to contribute with Pix:</p>
+      <img src="pix_qrcode.png" alt="QR Code Pix" style="width:200px;">
+    </section>
+
+    <p style="margin-top: 40px;">
+      🔙 <a href="chapter14.html">Back to Chapter 14</a> &nbsp;&nbsp;&nbsp; 📘 <a href="chapter16.html">Next Chapter →</a>
+    </p>
+
+    <footer style="margin-top: 40px;">
+      <p>&copy; 2025 Howard Roatti. All rights reserved.</p>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

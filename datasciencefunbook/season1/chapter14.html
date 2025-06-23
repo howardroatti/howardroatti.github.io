@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Science: A Brief History of Things We Forgot to Monitor</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 280px;
+      height: 100vh;
+      border: none;
+      overflow-y: auto;
+      background-color: #f4f4f4;
+    }
+    .main-content {
+      flex: 1;
+      padding: 30px;
+      max-width: 800px;
+    }
+    .book-title {
+      background-color: #003366;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <iframe class="sidebar" src="../summary.html" title="Summary"></iframe>
+
+  <div class="main-content">
+    <div class="book-title">
+      📘 From Insight to Deploy: A Lighthearted Journey Through Deep Data Science
+    </div>
+
+    <header>
+      <h1>🧯 Data Science: A Brief History of Things We Forgot to Monitor</h1>
+      <h2>Season 1 — Episode 14</h2>
+    </header>
+
+    <section>
+      <h3>🎙️ Original Episode</h3>
+      <p>The model went stale.<br>The pipeline stopped running.<br>The dashboard didn’t update.</p>
+      <p>Nobody noticed for 3 weeks.</p>
+      <p>Why?</p>
+      <ul>
+        <li>No alerting</li>
+        <li>No ownership</li>
+        <li>No documentation</li>
+      </ul>
+      <p>“Monitoring later” is how ghost models happen.</p>
+      <p>Make monitoring a first-class citizen. Not an afterthought.</p>
+    </section>
+
+    <section>
+      <h3>🔍 Let’s Go Deeper…</h3>
+      <p>Monitoring is often seen as a final step — a box to check after deployment.</p>
+      <p>But in reality, it’s what keeps data systems alive. Without it, you’re building sandcastles.</p>
+
+      <h4>🧯 What Needs to Be Monitored?</h4>
+      <ul>
+        <li>Data pipelines: Freshness, volume, schema, success/failure</li>
+        <li>Models: Accuracy, drift, input/output distributions</li>
+        <li>Dashboards: Update frequency, KPI anomalies, broken links</li>
+        <li>APIs: Latency, error rates, throughput</li>
+      </ul>
+      <p>If it can break silently, it must be monitored.</p>
+
+      <h4>💻 Hands-on – Simulated Monitoring Setup</h4>
+      <pre><code>import pandas as pd
+import numpy as np
+
+# Simulate model output drift
+np.random.seed(42)
+preds_day1 = np.random.normal(loc=0.5, scale=0.1, size=1000)
+preds_day30 = np.random.normal(loc=0.65, scale=0.1, size=1000)
+
+df = pd.DataFrame({
+    "day1": preds_day1,
+    "day30": preds_day30
+})
+
+# Compare distributions
+drift_detected = abs(df["day1"].mean() - df["day30"].mean()) > 0.05
+print("⚠ Drift detected?" , drift_detected)</code></pre>
+    </section>
+
+    <section>
+      <h3>✅ Lessons Learned</h3>
+      <ul>
+        <li>Monitoring should be part of the design, not just the ops phase</li>
+        <li>If no one owns it, it won’t be fixed</li>
+        <li>Alerts are only useful if they’re noticed and understood</li>
+      </ul>
+
+      <h3>⚠️ Common Mistakes</h3>
+      <ul>
+        <li>Monitoring only failures, not changes</li>
+        <li>Not simulating outages or breaks before going live</li>
+        <li>Creating alerts no one reads</li>
+      </ul>
+
+      <h3>🎯 Practice Challenge</h3>
+      <ol>
+        <li>Pick one data asset you rely on (pipeline, model, dashboard)</li>
+        <li>List 3 things that could go wrong silently</li>
+        <li>Implement 1 alert or check for each</li>
+        <li>Share the results with your team</li>
+      </ol>
+
+      <h3>📎 Tools & Resources</h3>
+      <ul>
+        <li>Evidently AI, Whylabs, Prometheus, Grafana</li>
+        <li>dbt’s source freshness and test suite</li>
+        <li>Article: “Build Monitoring Like You Build Features” – MLOps Community</li>
+      </ul>
+
+      <h3>🧠 Final Thought</h3>
+      <p>What you don’t monitor today becomes tomorrow’s incident.<br>
+      Data systems are only as reliable as your attention.</p>
+    </section>
+
+    <section style="margin-top: 40px;">
+      <h3>💙 Want to Support This Project?</h3>
+      <a href="http://link.mercadopago.com.br/datasciencefunbook" target="_blank">
+        <button>💳 Apoiar com Mercado Pago</button>
+      </a>
+      <p>Or scan the QR Code to contribute with Pix:</p>
+      <img src="pix_qrcode.png" alt="QR Code Pix" style="width:200px;">
+    </section>
+
+    <p style="margin-top: 40px;">
+      🔙 <a href="chapter13.html">Back to Chapter 13</a>
+    </p>
+
+    <footer style="margin-top: 40px;">
+      <p>&copy; 2025 Howard Roatti. All rights reserved.</p>
+    </footer>
+  </div>
+</div>
+</body>
+</html>
