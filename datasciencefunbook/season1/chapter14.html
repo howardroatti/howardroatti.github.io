@@ -83,10 +83,10 @@ np.random.seed(42)
 preds_day1 = np.random.normal(loc=0.5, scale=0.1, size=1000)
 preds_day30 = np.random.normal(loc=0.65, scale=0.1, size=1000)
 
-df = pd.DataFrame({
+df = pd.DataFrame({{
     "day1": preds_day1,
     "day30": preds_day30
-})
+}})
 
 # Compare distributions
 drift_detected = abs(df["day1"].mean() - df["day30"].mean()) > 0.05
